@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import translations from "../i18n/translations";
+import logo from "../assets/sportup-logo.png";
 
 function Home() {
   const [language, setLanguage] = useState("ru");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const t = translations[language];
 
@@ -19,11 +21,26 @@ function Home() {
 
           <section className="mobile-section hero-mobile">
             <div className="top-bar">
-              <span className="logo">
-                Sport<span>UP</span>
-              </span>
+            <img
+              src={logo}
+              alt="SportUP Logo"
+              className="logo-image"
+            />
 
-              <span className="menu">☰</span>
+             <button
+              className="menu-button"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+             >
+             ☰
+             </button>
+             {isMenuOpen && (
+  <div className="mobile-menu">
+    <a href="#about">About</a>
+    <a href="#vision">Vision</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="#contact">Contact</a>
+  </div>
+)}
             </div>
 
             <div className="hero-content">
