@@ -33,14 +33,15 @@ function Home() {
              >
              ☰
              </button>
+
              {isMenuOpen && (
-  <div className="mobile-menu">
-    <a href="#about">About</a>
-    <a href="#vision">Vision</a>
-    <a href="#roadmap">Roadmap</a>
-    <a href="#contact">Contact</a>
-  </div>
-)}
+              <div className="mobile-menu">
+              <a href="#about">About</a>
+              <a href="#vision">Vision</a>
+              <a href="#roadmap">Roadmap</a>
+              <a href="#contact">Contact</a>
+             </div>
+            )}
             </div>
 
             <div className="hero-content">
@@ -65,6 +66,19 @@ function Home() {
               {t.aboutAccent}
             </p>
           </section>
+          <section className="mobile-section trust-mobile">
+           <p className="section-label">
+            {t.trustLabel}
+             </p>
+
+            <h2>{t.trustTitle}</h2>
+
+            <div className="trust-wave">
+             <div className="wave-line"></div>
+             </div>
+
+              <p>{t.trustText}</p>
+            </section>
         </div>
       </div>
     </main>
